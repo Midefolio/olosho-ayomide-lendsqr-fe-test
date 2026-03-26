@@ -3,7 +3,7 @@ import React, { useState, useEffect, useCallback } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import styles from '../../../../styles/admin/userDetailsPage.module.scss'
 import { makeRequest } from '../../../../utils/fetcher'
-import { GET_USER_API, USER_TOKEN } from '../../../../apis'
+import { GET_USER_API, getUserToken } from '../../../../apis'
 import AdminLayout from '../../../../component/admin/adminLayout'
 import { IconArrowLeft, UserIcon } from '../../../../component/admin/LendsqrIcons'
 
@@ -261,7 +261,7 @@ const UserDetailsPage: React.FC = () => {
       GET_USER_API,
       { id: userId },
       () => setLoading(false),
-      USER_TOKEN, null, 'json'
+      getUserToken(), null, 'json'
     )
 
     if (res?.data) {
@@ -295,7 +295,7 @@ const UserDetailsPage: React.FC = () => {
     if (!user) return
     setActionLoading(true)
     const endpoint = action === 'blacklist' ? 'BLACKLIST_USER' : 'ACTIVATE_USER'
-    await makeRequest('PATCH', endpoint, { userId: user.id }, () => { }, USER_TOKEN, null, 'json')
+    await makeRequest('PATCH', endpoint, { userId: user.id }, () => { }, getUserToken(), null, 'json')
     setActionLoading(false)
     fetchUser()
   }

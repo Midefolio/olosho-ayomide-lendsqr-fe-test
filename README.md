@@ -79,7 +79,7 @@ npm run coverage    # Generate coverage report
 Create a `.env` file in the project root:
 
 ```env
-VITE_API_BASE_URL=https://lends-mock-backend-jz4j.onrender.com
+VITE_API_BASE_URL=https://olosho-ayomide-lendsqr-mock-api.onrender.com
 ```
 
 The app reads `auth_token` directly from `localStorage` at runtime — no token env variable is needed on the frontend.
@@ -128,7 +128,7 @@ src/
 
 Rather than using a third-party mock service, I built and deployed a custom Express backend:
 
-**Base URL:** `https://lends-mock-backend-jz4j.onrender.com`
+**Base URL:** `https://olosho-ayomide-lendsqr-mock-api.onrender.com`
 
 | Endpoint | Method | Auth | Description |
 |---|---|---|---|

@@ -18,7 +18,7 @@ import React, {
 import { useDispatch, useSelector } from 'react-redux'
 import type { RootState } from '../states'
 import { makeRequest } from '../utils/fetcher'
-import { GET_USERS_API, USER_TOKEN } from '../apis'
+import { GET_USERS_API, getUserToken } from '../apis'
 import {
   setUsersData,
   setStats,
@@ -125,7 +125,7 @@ export const UsersPageProvider: React.FC<{ children: ReactNode }> = ({ children 
       GET_USERS_API,
       { page: 1, limit: 1 },
       () => {},
-      USER_TOKEN,
+      getUserToken(),
       null,
       'json'
     )
@@ -166,7 +166,7 @@ export const UsersPageProvider: React.FC<{ children: ReactNode }> = ({ children 
         GET_USERS_API,
         { page: currentPage, limit: currentLimit },
         () => {},
-        USER_TOKEN,
+        getUserToken(),
         null,
         'json'
       )
@@ -241,7 +241,7 @@ export const UsersPageProvider: React.FC<{ children: ReactNode }> = ({ children 
         endpointMap[action],
         { userId },
         () => {},
-        USER_TOKEN,
+        getUserToken(),
         null,
         'json'
       )
