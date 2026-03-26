@@ -1,4 +1,26 @@
-# Logs
+# ── Dependencies ───────────────────────────────────────────────────────────────
+node_modules
+.pnp
+.pnp.js
+
+# ── Build outputs ──────────────────────────────────────────────────────────────
+dist
+dist-ssr
+build
+out
+
+# ── Environment variables (NEVER commit these) ─────────────────────────────────
+.env
+.env.local
+.env.development
+.env.development.local
+.env.test
+.env.test.local
+.env.production
+.env.production.local
+.env.staging
+
+# ── Logs ───────────────────────────────────────────────────────────────────────
 logs
 *.log
 npm-debug.log*
@@ -7,21 +29,49 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
-dist
-.env
-dist-ssr
-*.local
+# ── OS files ───────────────────────────────────────────────────────────────────
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
 
-# Editor directories and files
+# ── Editor directories and files ───────────────────────────────────────────────
 .vscode/*
 !.vscode/extensions.json
+!.vscode/settings.json
 .idea
-.DS_Store
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
 *.sw?
+*.swp
 
+# ── TypeScript ─────────────────────────────────────────────────────────────────
+*.tsbuildinfo
+
+# ── Testing ────────────────────────────────────────────────────────────────────
+coverage
+.nyc_output
+
+# ── Package manager locks (keep only one) ─────────────────────────────────────
+# Uncomment the ones you are NOT using:
+# package-lock.json  # uncomment if using yarn or pnpm
+# yarn.lock          # uncomment if using npm or pnpm
+# pnpm-lock.yaml     # uncomment if using npm or yarn
+
+# ── Misc / local config ────────────────────────────────────────────────────────
+*.local
+.cache
+.temp
+.tmp
+
+# ── Deployment ────────────────────────────────────────────────────────────────
 .vercel
+.netlify
+
+# ── Storybook ─────────────────────────────────────────────────────────────────
+storybook-static
