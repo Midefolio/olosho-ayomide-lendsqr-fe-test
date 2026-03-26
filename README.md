@@ -45,17 +45,17 @@ A pixel-faithful implementation of the Lendsqr Admin Console built as part of th
 
 ```bash
 # Clone the repo
-git clone https://github.com/[your-username]/lendsqr-fe-test.git
+git clonehttps://github.com/Midefolio/olosho-ayomide-lendsqr-fe-test.git
 cd lendsqr-fe-test
 
 # Install dependencies
-npm install
+npm install or npm install --f
 
 # Start the dev server
 npm run dev
 ```
 
-The app will be available at `http://localhost:5173`.
+The app will be available at `http://localhost:3000`.
 
 ### Build
 
@@ -211,8 +211,8 @@ Passing `null` as `cb` and calling `cb?.()` works at runtime, but tests using `e
 
 ## Submission
 
-- **Live App:** `https://olosho-ayomide-lendsqr-fe-test.vercel.app`
-- **Repository:** `https://github.com/midefolio/lendsqr-fe-test`
+- **Live App:** `https://olosho-ayomide-lendsqr-fe-test.vercel.app/`
+- **Repository:** `https://vercel.com/ayos-projects-34774290/olosho-ayomide-lendsqr-fe-test`
 - **Documentation:** [Google Doc / Notion link]
 - **Video Walkthrough:** [Loom link — max 3 minutes]# olosho-ayomide-lendsqr-fe-test
 # olosho-ayomide-lendsqr-fe-test
