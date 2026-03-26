@@ -1,0 +1,616 @@
+// ── User Details Page ─────────────────────────────────────────────────────────
+
+.userDetailsPage {
+
+  // ── Back link ───────────────────────────────────────────────────────────────
+  .backLink {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 15px;
+    font-weight: 500;
+    color: #545f7d;
+    text-decoration: none;
+    margin-bottom: 32px;
+    cursor: pointer;
+    transition: color 0.2s;
+
+    &:hover { color: #213f7d; }
+
+    svg { width: 18px; height: 18px; }
+  }
+
+  // ── Page header row ──────────────────────────────────────────────────────────
+  .pageHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 28px;
+    flex-wrap: wrap;
+    gap: 16px;
+
+    h1 {
+      font-size: 22px;
+      font-weight: 500;
+      color: #213f7d;
+    }
+
+    .headerActions {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+
+      button {
+        height: 40px;
+        padding: 0 20px;
+        border-radius: 8px;
+        font-size: 14px;
+        font-weight: 600;
+        font-family: 'Work Sans', sans-serif;
+        letter-spacing: 0.5px;
+        cursor: pointer;
+        transition: all 0.2s;
+        text-transform: uppercase;
+      }
+
+      .blacklistBtn {
+        background: transparent;
+        border: 1px solid #e4033b;
+        color: #e4033b;
+        &:hover { background: rgba(228, 3, 59, 0.06); }
+      }
+
+      .activateBtn {
+        background: transparent;
+        border: 1px solid #39cdcc;
+        color: #39cdcc;
+        &:hover { background: rgba(57, 205, 204, 0.06); }
+      }
+    }
+  }
+
+  // ── Profile card ─────────────────────────────────────────────────────────────
+  .profileCard {
+    background: #fff;
+    border-radius: 4px;
+    box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+    margin-bottom: 24px;
+    overflow: hidden;
+
+    .profileTop {
+      display: flex;
+      align-items: center;
+      gap: 0;
+      padding: 32px 40px;
+      flex-wrap: wrap;
+      gap: 0;
+    }
+
+    // Avatar + name block
+    .profileIdentity {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      padding-right: 40px;
+      border-right: 1px solid rgba(33, 63, 125, 0.1);
+      flex-shrink: 0;
+
+      .avatarCircle {
+        width: 72px;
+        height: 72px;
+        border-radius: 50%;
+        background: rgba(33, 63, 125, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        overflow: hidden;
+
+        img { width: 100%; height: 100%; object-fit: cover; }
+
+        svg { width: 36px; height: 36px; color: rgba(33, 63, 125, 0.3); }
+      }
+
+      .profileName {
+        h2 {
+          font-size: 20px;
+          font-weight: 500;
+          color: #213f7d;
+          margin-bottom: 4px;
+        }
+
+        .accountNum {
+          font-size: 13px;
+          color: #545f7d;
+        }
+      }
+    }
+
+    // Tier block
+    .profileTier {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      padding: 0 40px;
+      border-right: 1px solid rgba(33, 63, 125, 0.1);
+      flex-shrink: 0;
+
+      .tierLabel {
+        font-size: 11px;
+        font-weight: 500;
+        color: #545f7d;
+      }
+
+      .stars {
+        display: flex;
+        gap: 4px;
+
+        svg {
+          width: 16px;
+          height: 16px;
+        }
+      }
+    }
+
+    // Balance block
+    .profileBalance {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      padding-left: 40px;
+
+      .balanceAmount {
+        font-size: 20px;
+        font-weight: 600;
+        color: #213f7d;
+      }
+
+      .bankInfo {
+        font-size: 11px;
+        color: #545f7d;
+      }
+    }
+
+    // Tabs
+    .tabs {
+      display: flex;
+      border-top: 1px solid rgba(33, 63, 125, 0.1);
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+
+      &::-webkit-scrollbar { display: none; }
+
+      .tab {
+        padding: 16px 24px;
+        font-size: 15px;
+        font-weight: 400;
+        color: #545f7d;
+        cursor: pointer;
+        white-space: nowrap;
+        border-bottom: 3px solid transparent;
+        transition: all 0.2s;
+        flex-shrink: 0;
+
+        &:hover { color: #213f7d; }
+
+        &.activeTab {
+          color: #39cdcc;
+          border-bottom-color: #39cdcc;
+          font-weight: 500;
+        }
+      }
+    }
+  }
+
+  // ── Details card ─────────────────────────────────────────────────────────────
+  .detailsCard {
+    background: #fff;
+    border-radius: 4px;
+    box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+    padding: 40px;
+  }
+
+  // ── Section ──────────────────────────────────────────────────────────────────
+  .section {
+    margin-bottom: 40px;
+
+    &:last-child { margin-bottom: 0; }
+
+    .sectionTitle {
+      font-size: 15px;
+      font-weight: 500;
+      color: #213f7d;
+      margin-bottom: 24px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid rgba(33, 63, 125, 0.1);
+    }
+
+    .infoGrid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 32px 16px;
+      row-gap: 28px;
+
+      &.cols4 { grid-template-columns: repeat(4, 1fr); }
+      &.cols3 { grid-template-columns: repeat(3, 1fr); }
+    }
+
+    .infoField {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      min-width: 0;
+
+      .fieldLabel {
+        font-size: 11px;
+        font-weight: 400;
+        letter-spacing: 0px;
+        line-height: 100%;
+        text-transform: uppercase;
+        color: #545F7D;
+      }
+
+      .fieldValue {
+        font-size: 14px;
+        font-weight: 500;
+        color: #213f7d;
+        word-break: break-word;
+      }
+    }
+  }
+
+  // ── Guarantor section ─────────────────────────────────────────────────────
+  .guarantorBlock {
+    padding-bottom: 28px;
+    margin-bottom: 28px;
+    border-bottom: 1px solid rgba(33, 63, 125, 0.06);
+
+    &:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+  }
+}
+
+// ── Error State ────────────────────────────────────────────────────────────────
+.errorState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 24px;
+  text-align: center;
+  background: #fff;
+  border-radius: 4px;
+  box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+
+  .errorIcon {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 24px;
+    flex-shrink: 0;
+
+    &.offline {
+      background: rgba(84, 95, 125, 0.1);
+      color: #545f7d;
+    }
+
+    &.server {
+      background: rgba(228, 3, 59, 0.08);
+      color: #e4033b;
+    }
+
+    svg {
+      width: 28px;
+      height: 28px;
+    }
+  }
+
+  .errorTitle {
+    font-size: 18px;
+    font-weight: 600;
+    color: #213f7d;
+    margin-bottom: 8px;
+  }
+
+  .errorMessage {
+    font-size: 14px;
+    color: #545f7d;
+    max-width: 360px;
+    line-height: 1.6;
+    margin-bottom: 28px;
+  }
+
+  .retryBtn {
+    height: 44px;
+    padding: 0 28px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: 'Work Sans', sans-serif;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    text-transform: uppercase;
+    background: #39cdcc;
+    border: none;
+    color: #fff;
+    transition: all 0.2s;
+
+    &:hover { background: #2db8b7; transform: translateY(-1px); }
+    &:active { transform: translateY(0); }
+    &:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+  }
+}
+
+// ── Skeleton ──────────────────────────────────────────────────────────────────
+.shimmer {
+  background: linear-gradient(90deg, #f4f5f7 25%, #ecedf0 50%, #f4f5f7 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.6s infinite ease-in-out;
+  border-radius: 4px;
+}
+
+@keyframes shimmer {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+.skeletonProfileCard {
+  background: #fff;
+  border-radius: 4px;
+  box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+  margin-bottom: 24px;
+  overflow: hidden;
+
+  .skeletonProfileTop {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    padding: 32px 40px;
+    flex-wrap: wrap;
+  }
+
+  .skeletonTabs {
+    display: flex;
+    gap: 0;
+    padding: 0 40px;
+    border-top: 1px solid rgba(33, 63, 125, 0.08);
+
+    .skeletonTab {
+      padding: 20px 24px;
+    }
+  }
+}
+
+.skeletonDetailsCard {
+  background: #fff;
+  border-radius: 4px;
+  box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+  padding: 40px;
+
+  .skeletonSection {
+    margin-bottom: 40px;
+
+    .skeletonSectionTitle {
+      margin-bottom: 24px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid rgba(33, 63, 125, 0.08);
+    }
+
+    .skeletonGrid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 32px 16px;
+    }
+
+    .skeletonField {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+  }
+}
+
+// ── Responsive ────────────────────────────────────────────────────────────────
+@media (max-width: 900px) {
+  .userDetailsPage {
+    .profileCard {
+      .profileTop {
+        padding: 24px;
+        gap: 20px;
+      }
+
+      .profileIdentity {
+        border-right: none;
+        padding-right: 0;
+        border-bottom: 1px solid rgba(33, 63, 125, 0.1);
+        padding-bottom: 20px;
+        width: 100%;
+      }
+
+      .profileTier {
+        border-right: none;
+        padding: 0;
+        border-right: 1px solid rgba(33, 63, 125, 0.1);
+        padding-right: 32px;
+      }
+
+      .profileBalance {
+        padding-left: 32px;
+      }
+    }
+
+    .detailsCard { padding: 24px; }
+
+    .section {
+      .infoGrid {
+        grid-template-columns: repeat(3, 1fr);
+        &.cols4 { grid-template-columns: repeat(3, 1fr); }
+        &.cols3 { grid-template-columns: repeat(2, 1fr); }
+      }
+    }
+
+    .skeletonProfileCard .skeletonProfileTop { padding: 24px; }
+    .skeletonDetailsCard {
+      padding: 24px;
+      .skeletonSection .skeletonGrid { grid-template-columns: repeat(3, 1fr); }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .userDetailsPage {
+    .backLink {
+      font-size: 13px;
+      margin-bottom: 20px;
+      gap: 8px;
+
+      svg { width: 16px; height: 16px; }
+    }
+
+    .pageHeader {
+      margin-bottom: 20px;
+      gap: 12px;
+
+      h1 { font-size: 18px; }
+
+      .headerActions {
+        gap: 10px;
+        width: 100%;
+
+        button {
+          height: 36px;
+          padding: 0 14px;
+          font-size: 11px;
+          flex: 1;
+        }
+      }
+    }
+
+    .profileCard {
+      margin-bottom: 16px;
+
+      .profileTop {
+        padding: 16px;
+        gap: 16px;
+      }
+
+      .profileIdentity {
+        gap: 14px;
+        padding-bottom: 16px;
+
+        .avatarCircle {
+          width: 56px;
+          height: 56px;
+          svg { width: 28px; height: 28px; }
+        }
+
+        .profileName {
+          h2 { font-size: 16px; margin-bottom: 3px; }
+          .accountNum { font-size: 12px; }
+        }
+      }
+
+      .profileTier {
+        gap: 6px;
+        padding: 0;
+        border-right: 1px solid rgba(33, 63, 125, 0.1);
+        padding-right: 20px;
+
+        .tierLabel { font-size: 10px; }
+
+        .stars svg { width: 14px; height: 14px; }
+      }
+
+      .profileBalance {
+        padding-left: 20px;
+        gap: 4px;
+
+        .balanceAmount { font-size: 17px; }
+        .bankInfo { font-size: 11px; }
+      }
+
+      .tabs {
+        .tab {
+          padding: 13px 16px;
+          font-size: 13px;
+        }
+      }
+    }
+
+    .detailsCard { padding: 16px; }
+
+    .section {
+      margin-bottom: 28px;
+
+      .sectionTitle {
+        font-size: 13px;
+        margin-bottom: 16px;
+        padding-bottom: 12px;
+      }
+
+      .infoGrid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 18px 12px;
+        row-gap: 18px;
+
+        &.cols4,
+        &.cols3 { grid-template-columns: repeat(2, 1fr); }
+      }
+
+      .infoField {
+        gap: 6px;
+
+        .fieldLabel { font-size: 10px; }
+        .fieldValue { font-size: 13px; }
+      }
+    }
+
+    .guarantorBlock {
+      padding-bottom: 20px;
+      margin-bottom: 20px;
+    }
+
+    .skeletonDetailsCard {
+      padding: 16px;
+      .skeletonSection .skeletonGrid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    .skeletonProfileCard {
+      .skeletonProfileTop { padding: 16px; gap: 16px; }
+      .skeletonTabs { padding: 0 16px; }
+    }
+  }
+
+  .errorState {
+    padding: 60px 20px;
+
+    .errorTitle { font-size: 16px; }
+    .errorMessage { font-size: 13px; }
+  }
+}
+
+@media (max-width: 400px) {
+  .userDetailsPage {
+    .section {
+      .infoGrid,
+      .infoGrid.cols4,
+      .infoGrid.cols3 {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .profileCard {
+      .profileTier,
+      .profileBalance {
+        padding: 0;
+        border: none;
+      }
+    }
+  }
+}

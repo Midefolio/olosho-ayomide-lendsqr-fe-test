@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --color-primary: #39cdcc;
+  --color-welcome: #213f7d;
+  --color-subtitle: #545f7d;
+  --color-input-border: rgba(84, 95, 125, 0.15);
+  --color-input-border-focus: #39cdcc;
+  --color-white: #ffffff;
+  --color-bg: #ffffff;
+  --color-error: #e4033b;
+  --color-success: #39cdcc;
+  --font-family: 'Work Sans', sans-serif;
+  --font-inter: 'Inter', sans-serif;
+  --font-avenir: 'Avenir Next', 'Avenir', 'Nunito', sans-serif;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--color-bg);
+  color: var(--color-subtitle);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  height: 100%;
+}

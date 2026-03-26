@@ -1,0 +1,334 @@
+.loginPage {
+  min-height: 100vh;
+  display: flex;
+
+  .inner {
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+
+    // ── LEFT PANEL ──────────────────────────────────────────────
+    .leftPanel {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      background-color: rgba(33, 63, 125, 0.03);
+
+      // Logo header at the very top of the left panel
+      .header {
+        padding: 80px 40px 28px 80px;
+        flex-shrink: 0;
+
+        .logo {
+          display: inline-flex;
+          align-items: center;
+          text-decoration: none;
+
+          .logoImg {
+            height: 36px;
+            width: auto;
+            display: block;
+          }
+        }
+      }
+
+      // Illustration centered in remaining space
+      .illustrationWrapper {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px 48px 60px;
+
+        img {
+          width: 100%;
+          max-width: 620px;
+          height: auto;
+          display: block;
+        }
+      }
+    }
+
+    // ── RIGHT PANEL ─────────────────────────────────────────────
+    .rightPanel {
+      flex: 0 0 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 60px 64px;
+      background-color: #ffffff;
+
+      .formCard {
+        width: 100%;
+        max-width: 447px;
+
+        .welcomeHeading {
+          font-size: 40px;
+          font-weight: 700;
+          color: var(--color-welcome);
+          line-height: 1.15;
+          margin-bottom: 12px;
+          letter-spacing: -0.5px;
+        }
+
+        .subtitle {
+          font-size: 16px;
+          font-weight: 400;
+          color: var(--color-subtitle);
+          margin-bottom: 40px;
+        }
+
+        .form {
+          display: flex;
+          flex-direction: column;
+
+          .inputGroup {
+            position: relative;
+            margin-bottom: 24px;
+
+            .inputField {
+              width: 100%;
+              height: 50px;
+              padding: 0 20px;
+              font-family: var(--font-family);
+              font-size: 14px;
+              color: var(--color-welcome);
+              background: var(--color-white);
+              border: 1px solid var(--color-input-border);
+              border-radius: 5px;
+              outline: none;
+              transition: border-color 0.25s ease, box-shadow 0.25s ease;
+
+              &::placeholder {
+                color: rgba(84, 95, 125, 0.6);
+                font-size: 14px;
+              }
+
+              &:focus {
+                border-color: var(--color-input-border-focus);
+                box-shadow: 0 0 0 3px rgba(57, 205, 204, 0.12);
+              }
+
+              &.hasError {
+                border-color: var(--color-error);
+                box-shadow: 0 0 0 3px rgba(228, 3, 59, 0.1);
+              }
+
+              &.passwordInput {
+                padding-right: 80px;
+              }
+            }
+
+            .showToggle {
+              position: absolute;
+              right: 20px;
+              top: 50%;
+              transform: translateY(-50%);
+              background: none;
+              border: none;
+              cursor: pointer;
+              font-family: var(--font-family);
+              font-size: 12px;
+              font-weight: 600;
+              color: var(--color-primary);
+              letter-spacing: 0.5px;
+              text-transform: uppercase;
+              padding: 4px;
+              transition: opacity 0.2s ease;
+
+              &:hover {
+                opacity: 0.75;
+              }
+            }
+
+            .errorMessage {
+              position: absolute;
+              bottom: -18px;
+              left: 0;
+              font-size: 11px;
+              color: var(--color-error);
+              font-weight: 500;
+            }
+          }
+
+          .forgotPassword {
+            display: flex;
+            justify-content: flex-start;
+            margin-bottom: 24px;
+            margin-top: 4px;
+
+            a {
+              font-size: 12px;
+              font-weight: 600;
+              color: var(--color-primary);
+              text-decoration: none;
+              letter-spacing: 0.3px;
+              text-transform: uppercase;
+              transition: opacity 0.2s ease;
+
+              &:hover {
+                opacity: 0.75;
+              }
+            }
+          }
+
+          .loginButton {
+            width: 100%;
+            height: 50px;
+            background-color: var(--color-primary);
+            color: var(--color-white);
+            border: none;
+            border-radius: 8px;
+            font-family: var(--font-family);
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: background-color 0.25s ease, transform 0.15s ease,
+              box-shadow 0.25s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+
+            &:hover:not(:disabled) {
+              background-color: #2eb8b7;
+              box-shadow: 0 8px 24px rgba(57, 205, 204, 0.35);
+              transform: translateY(-1px);
+            }
+
+            &:active:not(:disabled) {
+              transform: translateY(0);
+            }
+
+            &:disabled {
+              opacity: 0.75;
+              cursor: not-allowed;
+            }
+
+            .spinner {
+              width: 18px;
+              height: 18px;
+              border: 2px solid rgba(255, 255, 255, 0.4);
+              border-top-color: #fff;
+              border-radius: 50%;
+              animation: spin 0.7s linear infinite;
+            }
+
+            @keyframes spin {
+              to { transform: rotate(360deg); }
+            }
+          }
+
+          .statusMessage {
+            margin-top: 16px;
+            text-align: center;
+            font-size: 13px;
+            font-weight: 500;
+            border-radius: 6px;
+            padding: 10px 16px;
+
+            &.success {
+              background: rgba(57, 205, 204, 0.1);
+              color: #2aaeae;
+            }
+
+            &.error {
+              background: rgba(228, 3, 59, 0.08);
+              color: var(--color-error);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// ── Tablet ───────────────────────────────────────────────────────────────
+@media (max-width: 900px) {
+  .loginPage {
+    .inner {
+      flex-direction: column;
+      min-height: unset;
+
+      .leftPanel {
+        .header {
+          padding: 20px 24px;
+        }
+
+        .illustrationWrapper {
+          padding: 8px 32px 32px;
+
+          img {
+            max-width: 340px;
+          }
+        }
+      }
+
+      .rightPanel {
+        flex: unset;
+        width: 100%;
+        padding: 40px 32px 56px;
+
+        .formCard {
+          max-width: 620px;
+        }
+      }
+    }
+  }
+}
+
+// ── Mobile ───────────────────────────────────────────────────────────────
+@media (max-width: 480px) {
+  .loginPage {
+    .inner {
+      .leftPanel {
+        flex: 0 0 200px !important;
+        height: 200px;
+        min-height: unset;
+        max-height: 200px;
+        overflow: hidden;
+
+        .header {
+          padding: 14px 20px;
+          flex-shrink: 0;
+
+          .logo .logoImg {
+            height: 22px;
+          }
+        }
+
+        .illustrationWrapper {
+          flex: 1;
+          min-height: 0;
+          padding: 0 20px 12px;
+          overflow: hidden;
+
+          img {
+            width: auto;
+            height: 100%;
+            max-width: 100%;
+            max-height: 110px;
+            object-fit: contain;
+          }
+        }
+      }
+
+      .rightPanel {
+        padding: 32px 20px 48px;
+
+        .formCard {
+          .welcomeHeading {
+            font-size: 28px;
+          }
+
+          .subtitle {
+            font-size: 14px;
+            margin-bottom: 28px;
+          }
+        }
+      }
+    }
+  }
+}
