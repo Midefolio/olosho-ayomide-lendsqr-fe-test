@@ -146,7 +146,7 @@ const LoginPage: React.FC = () => {
 
   return (
     <motion.div
-      className={styles.loginPage}
+      className={styles.loginPage} 
       variants={pageVariants as any}
       initial="hidden"
       animate="visible"

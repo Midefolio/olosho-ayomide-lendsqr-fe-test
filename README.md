@@ -3,6 +3,7 @@
 A pixel-faithful implementation of the Lendsqr Admin Console built as part of the Lendsqr Frontend Engineering Assessment.
 
 **Live Demo:** `https://olosho-ayomide-lendsqr-fe-test.vercel.app`
+**Mock Login Details:** `Email: adedeji@lendsql.com | Password: admin1@`
 
 ---
 
@@ -213,6 +214,6 @@ Passing `null` as `cb` and calling `cb?.()` works at runtime, but tests using `e
 
 - **Live App:** `https://olosho-ayomide-lendsqr-fe-test.vercel.app/`
 - **Repository:** `https://vercel.com/ayos-projects-34774290/olosho-ayomide-lendsqr-fe-test`
-- **Documentation:** [Google Doc / Notion link]
-- **Video Walkthrough:** [Loom link — max 3 minutes]# olosho-ayomide-lendsqr-fe-test
-# olosho-ayomide-lendsqr-fe-test
+- **Documentation:** `https://docs.google.com/document/d/14goBrPNHta9eiQuSJWnfYvZ8Pz-i1QR8/edit?usp=drive_link&ouid=105372956135614759329&rtpof=true&sd=true`
+- **Video Walkthrough:** `https://www.loom.com/share/b5ca73d4aea9405e8d945aa911479bea`
+
